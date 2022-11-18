@@ -14,7 +14,7 @@ steps:
     name: "shell script - commands"
     command: |
       ls -al
-      cat ~/.oci/config
+      #cat ~/.oci/config
 
   - type: Command
     name: "OCI Command - tenancy ns"
@@ -24,8 +24,8 @@ steps:
   - type: Command
     name: "python - get s3 secrets"
     command: |
-      # pip install oci
+      pip install oci
       echo '--------'
-      # python3 IaC/s3-auth-oci.py
+      python3 IaC/s3-auth-res-principal.py
 
 
