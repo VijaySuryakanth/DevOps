@@ -25,6 +25,6 @@ steps:
     command: |
       pip install oci
       echo '--------'
-      python3 IaC/s3-auth.py
+      python3 IaC/s3-auth-oci.py
 
 
