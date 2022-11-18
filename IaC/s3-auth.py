@@ -14,14 +14,17 @@ from pathlib import Path
 #userhome = sys.argv[1]
 #print('userhome'+ userhome)
 print ("str(Path.home()) "+ str(Path.home()))
-"""
+
 #Authentication using config file ~/.oci/config 
-  config = oci.config.from_file(file_location=str(Path.home())+'/.oci/config', profile_name='DEFAULT')
-  secrets_client = oci.secrets.SecretsClient(config)
+#config = oci.config.from_file(file_location=str(Path.home())+'/.oci/config', profile_name='DEFAULT')
+config = oci.config.from_file()
+secrets_client = oci.secrets.SecretsClient(config)
+
 """
 #Authentication using Instance Principal
 signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 secrets_client = oci.secrets.SecretsClient(config={}, signer=signer)
+"""
 
 result = uuid.uuid4()
 secret_id = "ocid1.vaultsecret.oc1.iad.amaaaaaazjgvoqyafuyhoiy35cosfhlc475mbihrim2imlmw7dlxrdaewhda"
