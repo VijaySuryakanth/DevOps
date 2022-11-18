@@ -11,6 +11,11 @@ steps:
       echo $BuildServiceDemoVersion
   
   - type: Command
+    name: "shell script - execute terraform commands"
+    command: |
+      ls -al
+
+  - type: Command
     name: "OCI Command - tenancy ns"
     command: |
       oci os ns get 
@@ -18,10 +23,6 @@ steps:
   - type: Command
     name: "python - get s3 secrets"
     command: |
-      python3 s3-auth.py
+      /IaC/python3 s3-auth.py
 
-  - type: Command
-    name: "shell script - execute terraform commands"
-    command: |
-      ls -al
 
