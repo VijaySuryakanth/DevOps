@@ -6,24 +6,13 @@
 * Log into your Oracle account
 
 ### How to run
-Commands:
---------
-plan    ./oci-run.sh COMPONENT_NAME="devops" SUBSCRIPTION_NAME="infra-dev" TF_CMD="plan"
-apply   ./oci-run.sh COMPONENT_NAME="devops" SUBSCRIPTION_NAME="infra-dev" TF_CMD="apply"
-destroy ./oci-run.sh COMPONENT_NAME="devops" SUBSCRIPTION_NAME="infra-dev" TF_CMD="destroy"
 
-        TF_CMD="apply -auto-approve"
-        TF_CMD="destroy -auto-approve"
+    ./oci-run.sh --component=COMPONENT_NAME --subscription-name=SUBSCRIPTION_NAME --tf-command=TF_CMD
 
-    Argumets Value:
-    --------------
-        COMPONENT_NAME    = "devops", "mds", "oke"
+Arguments:
+    COMPONENT_NAME       The name of the component to apply (eg 'devops', 'mds', 'mongo', 'oke')"
+    SUBSCRIPTION_NAME    The name of the subscription (eg. 'dev', 'uat', 'prod')"
+    TF_CMD               The name of the region (eg. 'plan', 'apply', 'destroy')"
 
-        SUBSCRIPTION_NAME = "infra-dev", "uat", "prod"
-
-        TF_CMD            = "plan", "apply", "destroy"
-
-
-```
-./oci-run.sh COMPONENT_NAME="devops" SUBSCRIPTION_NAME="infra-dev" TF_CMD="plan"
-```
+eg:
+    ./oci-run.sh --component=oke --subscription-name=dev --tf-command=plan
