@@ -24,7 +24,7 @@ parse_arguments() {
             ;;
         esac
     done
-    BACKEND_KEY="jenkins/$COMPONENT_NAME/oke/terraform.tfstate"
+    BACKEND_KEY="jenkins/$SUBSCRIPTION_NAME/oke/terraform.tfstate"
     echo "BACKEND_KEY = $BACKEND_KEY"
 
     BUCKET="tf_store"

@@ -8,19 +8,22 @@ locals {
   #vcn_cidr = element(data.oci_core_vcn.vcn.cidr_blocks, 0)
 
   #subnet names
-  cp_subnet_name      = "SN-${var.env_prefix}-DTM-OKE-API"
-  int_lb_subnet_name  = "SN-${var.env_prefix}-DTM-OKELB"
-  worker_subnet_name  = "SN-${var.env_prefix}-DTM-OKEW"
+  cp_subnet_name      = "SN-${var.env_prefix}-OKE-API"
+  int_lb_subnet_name  = "SN-${var.env_prefix}-INT-LB"
+  worker_subnet_name  = "SN-${var.env_prefix}-WKR"
+  publb_subnet_name   = "SN-${var.env_prefix}-PUB-LB"
 
   #security list
-  cp_seclist_name     = "SL-${var.env_prefix}-DTM-OKE-API"
-  intlb_seclist_name  = "SL-${var.env_prefix}-DTM-OKELB"
-  worker_seclist_name  = "SL-${var.env_prefix}-DTM-OKEW"
+  cp_seclist_name     = "SL-${var.env_prefix}-OKE-API"
+  intlb_seclist_name  = "SL-${var.env_prefix}-INT-LB"
+  worker_seclist_name = "SL-${var.env_prefix}-WKR"
+  publb_seclist_name  = "SL-${var.env_prefix}-PUB-LB"
 
   #NSG names
-  cp_nsg_name      = "NSG-${var.env_prefix}-DTM-OKE-API"
-  int_lb_nsg_name  = "NSG-${var.env_prefix}-DTM-OKELB"
-  worker_nsg_name  = "NSG-${var.env_prefix}-DTM-OKEW"
+  cp_nsg_name      = "NSG-${var.env_prefix}-OKE-API"
+  int_lb_nsg_name  = "NSG-${var.env_prefix}-INT-LB"
+  worker_nsg_name  = "NSG-${var.env_prefix}-WKR"
+  pub_lb_nsg_name  = "NSG-${var.env_prefix}-PUB-LB"
 
   # subnet cidrs - used by subnets
   vcn_cidr        = var.subnets["vcn_cidr"]
@@ -40,17 +43,13 @@ locals {
   node_port_min     = 30000
   node_port_max     = 32767
 
-  ssh_port = 22
-
   # protocols
   # # special OCI value for all protocols
   all_protocols = "all"
-
+  ssh_port = 22
   # # IANA protocol numbers
   icmp_protocol = 1
-
   tcp_protocol = 6
-
   udp_protocol = 17
 
   # oracle services network

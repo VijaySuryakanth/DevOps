@@ -81,3 +81,15 @@ resource "oci_core_security_list" "int_lb_seclist" {
     ]
   }
 }
+
+resource "oci_core_security_list" "pub_lb_seclist" {
+  compartment_id = var.compartment_id
+  display_name   = local.publb_seclist_name
+  vcn_id         = var.vcn_id
+
+  lifecycle {
+    ignore_changes = [
+      egress_security_rules, ingress_security_rules, defined_tags
+    ]
+  }
+}

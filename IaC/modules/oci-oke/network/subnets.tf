@@ -53,11 +53,12 @@ resource "oci_core_subnet" "int_lb" {
 resource "oci_core_subnet" "pub_lb" {
   cidr_block                 = local.pub_lb_subnet
   compartment_id             = var.compartment_id
-  display_name               = var.label_prefix == "none" ? "pub_lb" : "${var.label_prefix}-pub_lb"
-  #dns_label                  = "publb"
+  display_name               = local.publb_subnet_name
+  #display_name              = var.label_prefix == "none" ? "pub_lb" : "${var.label_prefix}-pub_lb"
+  #dns_label                 = "publb"
   prohibit_public_ip_on_vnic = false
   route_table_id             = var.ig_route_id
-  # security_list_ids          = [oci_core_security_list.pub_lb_seclist[0].id]
+  security_list_ids        = [oci_core_security_list.pub_lb_seclist[0].id]
   vcn_id = var.vcn_id
 
   count = var.load_balancers == "public" || var.load_balancers == "both" ? 1 : 0
