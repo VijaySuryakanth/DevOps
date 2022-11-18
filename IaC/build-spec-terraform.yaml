@@ -20,4 +20,5 @@ steps:
     name: "OCI Command - terraform"
     command: |
       cd IaC
+      chmod 755 oci-run.sh
       ./oci-run.sh --component=oke --subscription-name=dev --tf-command=plan
