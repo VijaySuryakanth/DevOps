@@ -11,12 +11,19 @@ steps:
       echo $BuildServiceDemoVersion
 
   - type: Command
-    name: "OCI Command"
-    command: |
-      oci os ns get --auth instance_principal
-
-  - type: Command
     name: "Terraform Command"
     command: |
       terraform version
+  
+  - type: Command
+    name: "Terraform Command"
+    command: |
+      python -v
+  
+  - type: Command
+    name: "OCI Command"
+    command: |
+      oci os ns get 
+
+
 
