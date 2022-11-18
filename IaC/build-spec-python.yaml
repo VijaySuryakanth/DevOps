@@ -1,0 +1,25 @@
+version: 0.1             
+component: build
+timeoutInSeconds: 1000
+shell: bash           
+
+steps:
+  - type: Command
+    name: "Display version"
+    command: |
+      BuildServiceDemoVersion=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
+      echo $BuildServiceDemoVersion
+  
+  - type: Command
+    name: "shell script - commands"
+    command: |
+      ls -al
+
+  - type: Command
+    name: "python - get s3 secrets"
+    command: |
+      pip install oci
+      echo '--------'
+      python3 IaC/s3-auth-res-principal.py
+
+

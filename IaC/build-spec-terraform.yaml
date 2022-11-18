@@ -13,19 +13,11 @@ steps:
   - type: Command
     name: "shell script - commands"
     command: |
+      cd IaC
       ls -al
-      #cat ~/.oci/config
 
   - type: Command
-    name: "OCI Command - tenancy ns"
+    name: "OCI Command - terraform"
     command: |
-      oci os ns get 
-
-  - type: Command
-    name: "python - get s3 secrets"
-    command: |
-      pip install oci
-      echo '--------'
-      python3 IaC/s3-auth-res-principal.py
-
-
+      cd IaC
+      ./oci-run.sh --component=oke --subscription-name=dev --tf-command=plan

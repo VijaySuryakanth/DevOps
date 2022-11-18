@@ -20,7 +20,8 @@ signer = oci.auth.signers.get_resource_principals_signer()
 secrets_client = oci.secrets.SecretsClient(config={}, signer=signer)
 
 result = uuid.uuid4()
-secret_id = "ocid1.vaultsecret.oc1.iad.amaaaaaazjgvoqyafuyhoiy35cosfhlc475mbihrim2imlmw7dlxrdaewhda"
+secret_id = "ocid1.vaultsecret.oc1.eu-marseille-1.amaaaaaazjgvoqyat2pwqzr6i2krvnw2fzkvclh6fc446s7dvobp45dmnzcq"
+#secret_id = sys.argv[1]
 
 get_secret_bundle_response = secrets_client.get_secret_bundle(
     secret_id           = secret_id,

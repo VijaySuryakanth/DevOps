@@ -1,0 +1,23 @@
+version: 0.1             
+component: build
+timeoutInSeconds: 1000
+shell: bash           
+
+steps:
+  - type: Command
+    name: "Display version"
+    command: |
+      BuildServiceDemoVersion=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
+      echo $BuildServiceDemoVersion
+  
+  - type: Command
+    name: "shell script - commands"
+    command: |
+      ls -al
+      #cat ~/.oci/config
+
+  - type: Command
+    name: "OCI Command - tenancy ns"
+    command: |
+      oci os ns get 
+
