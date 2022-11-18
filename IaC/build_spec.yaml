@@ -23,6 +23,6 @@ steps:
   - type: Command
     name: "python - get s3 secrets"
     command: |
-      /IaC/python3 s3-auth.py
+      python3 IaC/s3-auth.py
 
 
