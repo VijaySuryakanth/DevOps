@@ -1,0 +1,22 @@
+version: 0.1             
+component: build
+timeoutInSeconds: 1000
+shell: bash           
+
+steps:
+  - type: Command
+    name: "Display version"
+    command: |
+      BuildServiceDemoVersion=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
+      echo $BuildServiceDemoVersion
+
+  - type: Command
+    name: "OCI Command"
+    command: |
+      oci os ns get --auth instance_principal
+
+  - type: Command
+    name: "Terraform Command"
+    command: |
+      terraform version
+
