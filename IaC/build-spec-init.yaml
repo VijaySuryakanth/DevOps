@@ -13,7 +13,7 @@ steps:
   - type: Command
     name: "shell script - commands"
     command: |
-      echo 'tf_argument -' ${tf_argument}
+      echo "tf_argument - ${tf_argument}"
       ls -al
       #cat ~/.oci/config
 

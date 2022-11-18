@@ -28,4 +28,4 @@ steps:
     command: |
       cd IaC
       chmod 755 oci-run.sh
-      ./oci-run.sh --component=oke --subscription-name=dev --tf-command=${tf_argument}
+      ./oci-run.sh --component=oke --subscription-name=dev --tf-command="${tf_argument}"
