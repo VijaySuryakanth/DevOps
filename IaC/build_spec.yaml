@@ -9,21 +9,19 @@ steps:
     command: |
       BuildServiceDemoVersion=`echo ${OCI_BUILD_RUN_ID} | rev | cut -c 1-7`
       echo $BuildServiceDemoVersion
-
-  - type: Command
-    name: "Terraform Command"
-    command: |
-      terraform version
   
   - type: Command
-    name: "Terraform Command"
-    command: |
-      python -v
-  
-  - type: Command
-    name: "OCI Command"
+    name: "OCI Command - tenancy ns"
     command: |
       oci os ns get 
 
+  - type: Command
+    name: "python - get s3 secrets"
+    command: |
+      python3 s3-auth.py
 
+  - type: Command
+    name: "shell script - execute terraform commands"
+    command: |
+      ls -al
 
