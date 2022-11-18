@@ -22,10 +22,10 @@ steps:
       pip install oci
       echo '--------'
       python3 IaC/s3-auth-res-principal.py
-      
+
   - type: Command
     name: "OCI Command - terraform"
     command: |
       cd IaC
       chmod 755 oci-run.sh
-      ./oci-run.sh --component=oke --subscription-name=dev --tf-command=plan
+      ./oci-run.sh --component=oke --subscription-name=dev --tf-command=${tf_argument}
