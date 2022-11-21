@@ -17,6 +17,15 @@ env_param = {
     ig_rt_id                = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaanlchv4k5j5s3uxoeibkyhrljnric3qdjrichpqriwhqdyeowivlq"
     nat_rt_id               = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaawfn3e47pa5ikqnh4ej6roix2bnoewdsaabcghpcy4zrk5xmnoeta"
     cluster_name            = "k8scls-dev"
+  },
+  uat = {
+    compartment_id          = ""
+    network_compartment_id  = ""
+    ssh_public_key_path     = "" 
+    vcn_id                  = ""
+    ig_rt_id                = ""
+    nat_rt_id               = ""
+    cluster_name            = "k8scls-uat"
   }
 }
 

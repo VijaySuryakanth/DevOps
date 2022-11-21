@@ -46,6 +46,9 @@ module "network" {
   # fss integration
   create_fss = var.create_fss
 
+  providers = {
+    oci.home = oci.home
+  }
 }
 
 /*
@@ -125,6 +128,10 @@ module "streams" {
   stream_pool_name  = local.stream_pool
   #stream_pool_name  = join("", [local.stream_name, "POOL"])
   stream_partitions = var.stream_partitions
+
+  providers = {
+    oci.home = oci.home
+  }
 }
 
 
