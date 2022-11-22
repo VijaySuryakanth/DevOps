@@ -1,9 +1,7 @@
-#remote state configuration to store terraform state file.
-
 terraform {
   backend "s3" {
-    bucket   = "terraformstate"
-    #key      = "infra-dev/oke/terraform.tfstate"
+    bucket   = "tf_store"
+    #key      = "jenkins/terraform.tfstate"
     region   = "eu-marseille-1"
     endpoint = "https://frrudica1wgd.compat.objectstorage.eu-marseille-1.oraclecloud.com"
     #shared_credentials_file     = "keys/terraform-states_bucket_credentials"
@@ -13,4 +11,3 @@ terraform {
     force_path_style            = true
   }
 }
-
