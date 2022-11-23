@@ -51,7 +51,7 @@ module "network" {
   }
 }
 
-/*
+
 ## cluster creation for oke
 module "oke" {
   source = "../../modules/oci-oke/oke"
@@ -117,7 +117,7 @@ module "oke" {
     oci.home = oci.home
   }
 }
-*/
+
 /*
 module "streams" {
   source = "../../modules/oci-oke/streams"
