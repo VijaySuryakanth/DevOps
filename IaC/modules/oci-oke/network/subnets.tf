@@ -58,7 +58,7 @@ resource "oci_core_subnet" "pub_lb" {
   #dns_label                 = "publb"
   prohibit_public_ip_on_vnic = false
   route_table_id             = var.ig_route_id
-  security_list_ids        = [oci_core_security_list.pub_lb_seclist[0].id]
+  security_list_ids        = [oci_core_security_list.pub_lb_seclist.id]
   vcn_id = var.vcn_id
 
   count = var.load_balancers == "public" || var.load_balancers == "both" ? 1 : 0
