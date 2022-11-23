@@ -14,5 +14,5 @@ terraform {
 
 provider "oci"{
   alias = "home"
-  #config_file_profile= "PROFILE_MER"
+  #config_file_profile= "PROFILE_MAR"
 }

@@ -11,7 +11,7 @@ terraform {
 provider oci {
 	#auth = "InstancePrincipal"
 	region = var.region
-  config_file_profile= "PROFILE_MAR"
+  #config_file_profile= "PROFILE_MAR"
 }
 
 

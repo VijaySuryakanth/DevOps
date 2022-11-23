@@ -121,3 +121,8 @@ variable "nat_gateway_public_ip_id" {
   default     = "none"
   type        = string
 }
+
+variable "lockdown_default_seclist" {
+  type    = bool
+  default = false
+}
