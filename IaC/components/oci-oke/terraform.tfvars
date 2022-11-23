@@ -13,9 +13,9 @@ env_param = {
     compartment_id          = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa"
     network_compartment_id  = "ocid1.compartment.oc1..aaaaaaaawrvaz3qenxkroaq6zxnqfndsqvm4nylcxlnhpyp7mrbbo2pzhboa"
     ssh_public_key_path     = "keys/dev/id_rsa.pub" 
-    vcn_id                  = "ocid1.vcn.oc1.eu-marseille-1.amaaaaaazjgvoqyactzy4so74tchnqalqjbo4prtuhqmazoqk3qoedos727a"
-    ig_rt_id                = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaanlchv4k5j5s3uxoeibkyhrljnric3qdjrichpqriwhqdyeowivlq"
-    nat_rt_id               = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaawfn3e47pa5ikqnh4ej6roix2bnoewdsaabcghpcy4zrk5xmnoeta"
+    vcn_id                  = "ocid1.vcn.oc1.eu-marseille-1.amaaaaaazjgvoqya5vis3kjmfv3nin7w4xivto5zrcylcmv4vinc3ml4ly6a"
+    ig_rt_id                = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaagm2qrar4bps6gccw2axygigxpse2525bjna52yg5bbwdzuzk5fna"
+    nat_rt_id               = "ocid1.routetable.oc1.eu-marseille-1.aaaaaaaa7yqb4jzam6mzvqyhd3xfsrw6ag4zofvbcsn2odn3oggliyquc3za"
     cluster_name            = "k8scls-dev"
   },
   uat = {
