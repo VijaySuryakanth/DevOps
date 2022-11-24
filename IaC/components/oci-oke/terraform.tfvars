@@ -65,7 +65,7 @@ use_signed_images = false
 check_node_active = "all"
 enable_pv_encryption_in_transit = false
 node_pools = {
-  #apppool = { shape = "VM.Standard2.4", ocpus = 4, memory = 32, node_pool_size = 2, boot_volume_size = 150, label = { pool = "apppool" } }
+  apppool = { shape = "VM.Standard2.4", ocpus = 4, memory = 32, node_pool_size = 2, boot_volume_size = 150, label = { pool = "apppool" } }
 }
 
 node_pool_image_id    = "none"
