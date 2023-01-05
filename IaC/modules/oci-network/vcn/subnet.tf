@@ -25,28 +25,21 @@ resource "oci_core_security_list" "test_security_list" {
         #Optional
         description = "api gtw security list - egress rule"
         destination_type = "CIDR_BLOCK"
-        stateless = false                
+        stateless = true                
     }
     freeform_tags = {"env"= "Dev"}
     ingress_security_rules {
         #Required
         protocol = "6" # TCP = "6"
-        source = "0.0.0.0/0"
-
+        source = "10.0.0.0/16"
         #Optional
-        description = "api gtw security list - ingress rule"
-
+        description = "security list - ingress rule for port 80"
         source_type = "CIDR_BLOCK"
-        stateless = false
+        stateless = true
         tcp_options {
             #Optional
             max = "80"
             min = "80"
-            /*source_port_range {
-                #Required
-                max = ""
-                min = ""
-            }*/
         }
     }
 }
